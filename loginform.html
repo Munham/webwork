@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="loginform$login.css">
+    <title>Form</title>
+</head>
+<body>
+    <div class="sign-up-box">
+        <h1>Sign Up</h1>
+        <h4>Enter Valid Details To Create Account</h4>
+
+        <form>
+            <input type="text" placeholder="Name"/>
+
+            <input type="adress" placeholder="Address"/>
+
+            <input type="email" placeholder="email"/>
+
+            <input type="password" placeholder="Password"/>
+
+            <input type="confirmPassword" placeholder="Confirm Password"/>
+
+            <button type="submit">Send</button>
+        </form>
+
+        <p>Before clicking the sign up button, Agree with our <br>
+        <a href="a">Terms and Conditions</a> and <a href="a">Policy Privacy</a>
+    </p>
+    </div>
+
+    <p class="para-2">
+        Already havean account? <a href="login.html">Login here</a>
+    </p>
+    
+</body>
+<script>
+	let form=document.getElementById("form");
+	form.addEventListener("submit", function(event){
+		event.preventDefault();
+		let name = document.getElementById("Name").value;
+		let address = document.getElementById("Address").value;
+		let email = document.getElementById("email").value;
+		let password = document.getElementById("Password").value;
+        let confirmpassword = document.getElementById("ConfirmPassword").value;
+		let contact = {name:name, address:Address, email:email, password:ConfirmPassword};
+		let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
+		contacts.push(contact);
+		localStorage.setItem("contacts", JSON.stringify(contacts));
+		alert("successfully");
+		form.reset();
+		
+	});
+</script>
+<script src="./index.js"></script>
+</html>
